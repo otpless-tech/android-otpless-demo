@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HeadlessActivity"
+    android:id="@+id/headless_activity"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:tint="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Headless"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/auth_type_selector"
+                layout="@layout/auth_type_selector" />
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Country Code"
+                        android:layout_margin="10dp"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.7"
+                        />
+
+                    <EditText
+                        android:id="@+id/et_country_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Country Code"
+                        android:inputType="number"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1.3"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:layout_margin="10dp"
+                        android:textStyle="bold"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.6"
+                        />
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Phone Number"
+                        android:layout_marginHorizontal="10dp"
+                        android:inputType="phone"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_weight="1.4"/>
+
+                    <Button
+                        android:id="@+id/btn_start_phone_headless"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Start"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/button_bg_blue"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="OTP"
+                        android:layout_margin="10dp"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="0.5"
+                        />
+
+                    <EditText
+                        android:id="@+id/et_phone_otp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter OTP"
+                        android:inputType="number"
+                        android:textSize="14sp"
+                        android:layout_weight="1.5"
+                        android:layout_marginHorizontal="10dp"
+                        android:textColor="@color/black"
+                        tools:ignore="TextFields" />
+
+                    <Button
+                        android:id="@+id/btn_verify_phone_otp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Verify"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/button_bg_blue"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textStyle="bold"
+                        android:layout_margin="10dp"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.5"
+                        />
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your email id"
+                        android:textSize="14sp"
+                        android:layout_margin="10dp"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/black"
+                        android:layout_weight="1.5"/>
+
+                    <Button
+                        android:id="@+id/btn_start_email_headless"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Start"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/button_bg_blue"
+                        android:layout_weight="1"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="0.5"
+                        android:padding="10dp"
+                        android:text="OTP"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_email_otp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:hint="Enter OTP"
+                        android:inputType="number"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="TextFields" />
+
+                    <Button
+                        android:id="@+id/btn_verify_email_otp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/button_bg_blue"
+                        android:text="Verify"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:text="Select a channel that you have enabled on OTPLESS Dashboard"/>
+
+                <Button
+                    android:id="@+id/btn_show_channels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show Channels"
+                    android:backgroundTint="@color/button_bg_blue"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:padding="10dp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_start_sso_headless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Start"
+                    android:backgroundTint="@color/button_bg_blue"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    />
+
+            </LinearLayout>
+
+
+            <include
+                android:id="@+id/otpless_response_handler_headless_activity"
+                android:visibility="gone"
+                layout="@layout/otpless_response_handler" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
