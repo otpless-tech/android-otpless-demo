@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:host="otpless"
-                    android:scheme= "otpless.yytfdi0602x3o5t5sis5"/>
+                    android:scheme= "otpless.5e62zcanetd9urnxpz80"/>
             </intent-filter>
         </activity>
         <activity
@@ -44,7 +44,7 @@
 
                 <data
                     android:host="otpless"
-                    android:scheme="otpless.5e62zcanetd9urnxpz80" />
+                    android:scheme="otpless.ztdr74hfnt0l7cp504zf" />
             </intent-filter>
         </activity>
     </application>

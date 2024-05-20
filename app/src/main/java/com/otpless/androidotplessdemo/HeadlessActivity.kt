@@ -65,10 +65,10 @@ class HeadlessActivity : AppCompatActivity() {
     }
 
     private fun initializeOtpless(savedInstanceState: Bundle?) {
-        otplessView = OtplessManager.getInstance().getOtplessView(this);
-        otplessView.initHeadless("yytfdi0602x3o5t5sis5", savedInstanceState);
-        otplessView.setHeadlessCallback(this::onHeadlessCallback);
-        otplessView.verifyIntent(intent);
+        otplessView = OtplessManager.getInstance().getOtplessView(this)
+        otplessView.initHeadless("5E62ZCANETD9URNXPZ80", savedInstanceState)
+        otplessView.setHeadlessCallback(this::onHeadlessCallback)
+        otplessView.verifyIntent(intent)
     }
 
     private fun startEmailAuth() {
