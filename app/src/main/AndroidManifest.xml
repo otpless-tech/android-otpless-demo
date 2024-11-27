@@ -12,6 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/otpless_network_security_config"
         android:theme="@style/Theme.AndroidOtplessDemo"
         tools:targetApi="31">
         <activity
@@ -44,7 +45,7 @@
 
                 <data
                     android:host="otpless"
-                    android:scheme="otpless.ztdr74hfnt0l7cp504zf" />
+                    android:scheme="otpless.5e62zcanetd9urnxpz80" />
             </intent-filter>
         </activity>
     </application>

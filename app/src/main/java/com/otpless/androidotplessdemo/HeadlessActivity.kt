@@ -3,7 +3,6 @@ package com.otpless.androidotplessdemo
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
@@ -66,9 +65,8 @@ class HeadlessActivity : AppCompatActivity() {
 
     private fun initializeOtpless(savedInstanceState: Bundle?) {
         otplessView = OtplessManager.getInstance().getOtplessView(this)
-        otplessView.initHeadless("5E62ZCANETD9URNXPZ80", savedInstanceState)
+        otplessView.initHeadless(ConfigurationSettings.DEMO_APP_ID)
         otplessView.setHeadlessCallback(this::onHeadlessCallback)
-        otplessView.verifyIntent(intent)
     }
 
     private fun startEmailAuth() {
@@ -104,6 +102,14 @@ class HeadlessActivity : AppCompatActivity() {
     }
 
     private fun onHeadlessCallback(response: HeadlessResponse) {
+        when(response.responseType) {
+            "OTP_AUTO_READ" -> {
+                response.response?.optString("otp")?.let {
+                    etPhoneOtp.setText(it)
+                }
+
+            }
+        }
         otplessResponseHandler.visibility = View.VISIBLE
         responseTV.text = response.toString()
     }
@@ -115,7 +121,7 @@ class HeadlessActivity : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        otplessView.verifyIntent(intent)
+        otplessView.onNewIntent(intent)
     }
 
     private fun setOnClickListeners() {

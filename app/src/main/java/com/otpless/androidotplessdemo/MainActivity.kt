@@ -77,10 +77,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showPreBuiltUI() {
-        val request = OtplessRequest("ZTDR74HFNT0L7CP504ZF")
+        val request = OtplessRequest(ConfigurationSettings.DEMO_APP_ID)
         otplessView.setCallback(request, this::onOtplessCallback)
         otplessView.showOtplessLoginPage(request, this::onOtplessCallback)
-        otplessView.verifyIntent(intent)
     }
 
     private fun onOtplessCallback(response: OtplessResponse) {
@@ -90,7 +89,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        otplessView.verifyIntent(intent)
+        otplessView.onNewIntent(intent)
     }
 
     override fun onBackPressed() {
