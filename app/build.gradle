@@ -44,7 +44,7 @@ dependencies {
     androidTestImplementation libs.androidx.espresso.core
 
     // region otpless
-    implementation 'io.github.otpless-tech:otpless-android-sdk:2.3.2'
+    implementation 'io.github.otpless-tech:otpless-android-sdk:2.5.3'
     // endregion
 
 }
